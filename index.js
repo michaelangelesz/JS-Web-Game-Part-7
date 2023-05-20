@@ -4,7 +4,12 @@ const pc = newPlayableCharacter(100, 110)
 // Create a non-playable character
 const npc = newNonPlayableCharacter(50, 300)
 
-// have the NPC start walking east immediately
+/* 
+1. The `moveNPC()` function is defined as an asynchronous function.
+2. A `while` loop is started, which will run indefinitely.
+3. The NPC is moved in various direction using the `npc.walkNorth orEast orWest orSouth()` method. The `await` keyword is used to pause the execution of the function until the movement is completed. 
+4. The desired duration is then given in milliseconds here.
+*/
 async function moveNPC(){
     while (true){
     await npc.walkNorth(1400)

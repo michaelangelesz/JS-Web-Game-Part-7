@@ -23,6 +23,15 @@ function newNonPlayableCharacter(x, y) {
 
     setInterval(moveCharacter, 1)
 
+    /* 
+    Add the Ability to Wait for walkEast:
+    1. Make it asynchronous using the `async` keyword.
+    2. Make it accept time as a parameter.
+    3. At the end of the function, invoke sleep and pass it time as an argument.
+    4. Use await to pause walkEast until sleep (time) has resolved.
+    5. After sleep has resolved, invoke stop to stop the character. 
+    6. Update the other walkDirections accordingly. 
+    */
     async function walkEast(time) {
         direction = 'east'
         element.src = `./assets/green-character/east.gif`
@@ -66,6 +75,7 @@ function newNonPlayableCharacter(x, y) {
     }
 }
 
+// Preparing to Use Async and Await. 1st step: With the code below, we implement the sleep function to pause function execution, and allow conversion of functions to be able to return promises instead of callbacks (make them async)
 function sleep(time){
     return new Promise(resolve => {
         setTimeout(resolve, time)
