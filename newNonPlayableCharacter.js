@@ -75,7 +75,11 @@ function newNonPlayableCharacter(x, y) {
     }
 }
 
-// Preparing to Use Async and Await. 1st step: With the code below, we implement the sleep function to pause function execution, and allow conversion of functions to be able to return promises instead of callbacks (make them async)
+/* 
+Preparing to Use Async and Await. 
+1. This code implements the sleep function to pause function execution. 
+2. Allows conversion of functions to be able to return promises instead of callbacks (make them async) 
+*/
 function sleep(time){
     return new Promise(resolve => {
         setTimeout(resolve, time)
